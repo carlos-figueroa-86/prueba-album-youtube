@@ -1,0 +1,77 @@
+.video-add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.video-add input {
+  width: 100%;
+  border-radius: 50px;
+  padding: 10px; 
+  -webkit-border-top-left-radius: 50px;
+  -webkit-border-bottom-left-radius: 50px;
+  -moz-border-radius-topleft: 50px;
+  -moz-border-radius-bottomleft: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-style: solid;
+  background-color: white;
+}
+
+.video-add .btn-add-video {
+  font-size: 16px;
+  position: absolute;
+  padding: 10px 50px;
+  right: 0;
+  height: 100%; 
+  -webkit-border-top-right-radius: 50px;
+  -webkit-border-bottom-right-radius: 50px;
+  -moz-border-radius-topright: 50px;
+  -moz-border-radius-bottomright: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.video-label-left {
+  position: absolute;
+  right: 0px;
+  color: white;
+  font-size: 12px;
+  background-color: black;
+  border-radius: 3px;
+  padding: 5px 3px;
+  font-weight: 700;
+  margin-right: 5px;
+  z-index: 1;
+}
+
+.video-actions-remove {
+  top: 3px;
+  margin-top: 2px;
+  font-size: 18px;
+}
+
+.video-duration-time {
+  bottom: 0px;
+  margin-bottom: 2px;
+  cursor: default;
+}
+
+.v-overlay__content .v-toolbar {
+  background: transparent;
+}
+
+.modal-card {
+  padding: 10px 50px;
+}
+
+.modal-card .card-header {
+  display: flex;
+}
+
+.modal-card .card-header i {
+  margin-right: -35px;
+  margin-top: 10px;
+}
