@@ -1,5 +1,5 @@
 <template>
-  <v-snackbar
+  <VSnackbar
     v-model="statusSnackbar.active"
     :timeout="statusSnackbar.timeout"
     location="top"
@@ -9,17 +9,17 @@
   >
     {{ statusSnackbar.message }}
     <template v-slot:actions>
-      <v-btn
+      <VBtn
         color="black"
         variant="text"
         @click="handleCloseDialog"
         icon
         size="x-small"
       >
-        <v-icon color="black">mdi-close</v-icon>
-      </v-btn>
+        <VIcon color="black">mdi-close</VIcon>
+      </VBtn>
     </template>
-  </v-snackbar>
+  </VSnackbar>
 </template>
 
 <script setup lang="ts">

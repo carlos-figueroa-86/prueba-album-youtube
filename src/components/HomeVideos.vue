@@ -1,25 +1,25 @@
 <template>
-  <v-container>
-    <v-row class="pb-10">
-      <v-col cols="12" sm="12" xl="12">
+  <VContainer>
+    <VRow class="pb-10">
+      <VCol cols="12" sm="12" xl="12">
         <h2 class="text-left mb-3">Añadir nuevo video</h2>
         <div class="video-add">
           <input type="text" v-model="newVideoUrl" />
-          <v-btn
+          <VBtn
             class="btn-add-video"
             color="primary"
             variant="elevated"
             @click="addVideo"
-            >Añadir</v-btn
-          >
+            >Añadir
+          </VBtn>
         </div>
-      </v-col>
-    </v-row>
+      </VCol>
+    </VRow>
 
     <ListVideos v-if="videos.length" :videos="videos"></ListVideos>
 
     <SnackbarCustom :snackbar="snackbar"></SnackbarCustom>
-  </v-container>
+  </VContainer>
 </template>
 
 <script setup lang="ts">
@@ -54,8 +54,8 @@ const snackbar = ref(props.snackbar);
 const initial = async () => {
   // Obtenemos la lista de videos
   videos.value = await todosVideos();
-  return
-}
+  return;
+};
 initial();
 
 // Funcion que add videos

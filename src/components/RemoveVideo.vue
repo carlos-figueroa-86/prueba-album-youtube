@@ -1,59 +1,64 @@
 <template>
-  <v-dialog
+  <VDialog
     v-bind:model-value="openDialogRemove.openDialog"
     width="auto"
     persistent
   >
-    <v-card class="modal-card">
+    <VCard class="modal-card">
       <div class="card-header">
-        <v-card-title>¿Seguro que quieres eliminar este video?.</v-card-title>
-        <v-spacer></v-spacer>
-        <v-icon @click="handleCloseDialog" color="primary">mdi-close</v-icon>
+        <VCardTitle>¿Seguro que quieres eliminar este video?.</VCardTitle>
+        <VSpacer></VSpacer>
+        <VIcon @click="handleCloseDialog" color="primary">mdi-close</VIcon>
       </div>
 
-      <v-card-actions class="mt-4">
-        <v-spacer></v-spacer>
-        <v-btn
+      <VCardActions class="mt-4">
+        <VSpacer></VSpacer>
+        <VBtn
           color="primary mr-4"
           variant="outlined"
           @click="handleCloseDialog"
         >
           Cancelar
-        </v-btn>
-        <v-btn
+        </VBtn>
+        <VBtn
           color="primary"
           variant="flat"
-          @click="onRemovePositionVideo(openDialogRemove.indexed, openDialogRemove.videoID)"
+          @click="
+            onRemovePositionVideo(
+              openDialogRemove.indexed,
+              openDialogRemove.videoID
+            )
+          "
         >
           Eliminar
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        </VBtn>
+      </VCardActions>
+    </VCard>
+  </VDialog>
 </template>
 
 <script setup lang="ts">
 import { PropType } from 'vue';
 import { defineProps, defineEmits } from 'vue';
 
-  interface DialogRemove {
-    openDialog: boolean,
-    indexed: number
-    videoID: string,
-  }
+interface DialogRemove {
+  openDialog: boolean;
+  indexed: number;
+  videoID: string;
+}
 
-  defineProps({
-    openDialogRemove: {
-      type: Object as PropType<DialogRemove>,
-      default: () => ({
-        openDialog: false,
-      })
-    },
-    onRemovePositionVideo: {
-      type: Function,
-      required: true,
-    },
-  });
+defineProps({
+  openDialogRemove: {
+    type: Object as PropType<DialogRemove>,
+    default: () => ({
+      openDialog: false,
+    }),
+  },
+  onRemovePositionVideo: {
+    type: Function,
+    required: true,
+  },
+});
 
 const emit = defineEmits(['hideModel']);
 const handleCloseDialog = () => emit('hideModel');
