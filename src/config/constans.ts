@@ -12,7 +12,7 @@ const CONSTS = {
     appId: process.env.VUE_APP_FIREBASE_APP_ID,
     measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID
   },
-  NAME_COLLECTION: process.env.VUE_APP_FIREBASE_BUCKET,
+  NAME_COLLECTION: process.env.VUE_APP_FIREBASE_NAME_COLLENTION,
 };
 
 export default CONSTS;
